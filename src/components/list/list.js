@@ -6,6 +6,7 @@ function List(props) {
     const [activePage, setActivePage] = useState(1);
     const [numOfPages, setNumOfPages] = useState(Math.ceil(props.list.length/settingsContext.itemPerPage));
     useEffect(()=>{
+        // console.log(settingsContext.itemPerPage);
         let start = (activePage - 1)*settingsContext.itemPerPage;
         let end = start + settingsContext.itemPerPage;
         setNumOfPages(Math.ceil(props.list.length/settingsContext.itemPerPage)); 
