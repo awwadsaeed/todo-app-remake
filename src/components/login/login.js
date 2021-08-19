@@ -31,7 +31,7 @@ const Login = () => {
       <Else>
         <div style={{marginLeft:'5%'}}>
         <form onSubmit={handleSubmit}>
-          <input required type="text" className="bp3-input" onChange={changeUsername} placeholder="Enter your Email" style={{width: '35%',marginLeft:'2%'}} />
+          <input required type="text" className="bp3-input" onChange={changeUsername} placeholder="Enter your Username" style={{width: '35%',marginLeft:'2%'}} />
           <input required type="password" className="bp3-input" onChange={changePassword} placeholder="Enter your password..." style={{width: '35%',marginLeft:'1%'}} />
           <Button type="submit" style={{marginLeft:'1%'}}>Login</Button>
         </form>

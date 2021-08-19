@@ -37,7 +37,7 @@ const SignUp = () => {
 				<form onSubmit={handleSubmitSignup} style={{marginLeft :'5%'}}>
                      <input required type="text" className="bp3-input" name="username" onChange={changeUsername} placeholder="Enter Username" style={{width: '32%'}} />
 
-                     <input required type="password" className="bp3-input" name="password" onChange={changePassword} placeholder="Enter Username" style={{width: '32%',marginLeft:'1%'}} />
+                     <input required type="password" className="bp3-input" name="password" onChange={changePassword} placeholder="Enter Password" style={{width: '32%',marginLeft:'1%'}} />
 
                      <div className="bp3-html-select" style={{marginLeft:'1%'}}>
 					<select  name="roles" id="roles" onChange={handleChangeRole}  style={{borderRadius :'5px' , height:'30px'}}>
