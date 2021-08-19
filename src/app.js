@@ -9,6 +9,7 @@ import SettingsForm from './components/settingsForm/SettingsForm';
 import Auth from './components/auth/auth';
 import Login from './components/login/login';
 import SignUp from './components/signup/signup';
+import './app.css'
 
 const EditLink = () => {
   return (

@@ -1,6 +1,6 @@
 import React,{useState,useContext,useEffect} from 'react'
 import {settingContext} from '../../context/settingContext.js';
-import { Button} from "@blueprintjs/core";
+import { Button,Card,Elevation } from "@blueprintjs/core";
 function List(props) {
     const settingsContext = useContext(settingContext);
     const [activeList, setActiveList] = useState([]);
@@ -44,29 +44,28 @@ function List(props) {
     const pages=()=>{
         let page =[];
         for(let i=1;i<=numOfPages;i++){
-           page.push(<Button onClick={()=>{changeActivePage(i)}} key={i}>{i}</Button>)
+           page.push(<Button style={{backgroundColor:'#2A363F'}} onClick={()=>{changeActivePage(i)}} key={i}>{i}</Button>)
         }
         return page;
     }
 //----------------------------------------------//
-    return (
-        <div>
-            <Button onClick={toggleView} >{settingsContext.showCompleted.toString()}</Button>
+    return (<>
+            <Button style={{marginLeft:'18px', backgroundColor:'#2A363F'}} onClick={toggleView} >{settingsContext.showCompleted.toString()}</Button>
+        <div style={{marginLeft:'10%'}}>
             {activeList.map(item => (
-        <div key={item.id}>
+        <Card style={{width:'30%', marginBottom:'5px',backgroundColor:'#394B59'}} interactive={true} elevation={Elevation.TWO} key={item.id}>
           <p>{item.text}</p>
           <p><small>Assigned to: {item.assignee}</small></p>
           <p><small>Difficulty: {item.difficulty}</small></p>
           <div onClick={() => props.toggleComplete(item.id)}>Complete: {item.complete.toString()}</div>
-          <hr />
-        </div>
+        </Card>
       ))}
-     {activePage>1 && <Button onClick={()=>{setActivePage(activePage-1)}}>prev</Button>}
+     {activePage>1 && <Button style={{backgroundColor:'#2A363F'}} onClick={()=>{setActivePage(activePage-1)}}>prev</Button>}
         {pages()}
-      {activePage<numOfPages && <Button onClick={()=>{setActivePage(activePage+1)}} >next</Button>}
+      {activePage<numOfPages && <Button style={{backgroundColor:'#2A363F'}} onClick={()=>{setActivePage(activePage+1)}} >next</Button>}
 
         </div>
-    )
+    </>)
 }
 
 export default List

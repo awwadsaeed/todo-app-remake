@@ -1,6 +1,6 @@
 import React from 'react'
 import useForm from '../../hooks/form.js';
-import { Button } from "@blueprintjs/core";
+import { Button,Slider } from "@blueprintjs/core";
 
 function Form(props) {   
     const { handleChange, handleSubmit } = useForm(props.addItem);
@@ -10,23 +10,24 @@ function Form(props) {
 
                 <h2>Add To Do Item</h2>
 
-                <label>
-                    <span>To Do Item</span>
-                    <input onChange={handleChange} name="text" type="text" placeholder="Item Details" />
+                <label style={{marginLeft:'1%'}}>
+                    <span style={{marginRight:'10px'}}>To Do Item</span>
+                    <input className="bp3-input" style={{width:'70px'}} placeholder="Item Details" name="text" type="text" onChange={handleChange} />
+                </label>
+
+                <label style={{marginLeft:'1%'}}>
+                    <span style={{marginRight:'10px'}}>Assigned To</span>
+                    <input style={{marginRight:'10px'}} className="bp3-input" style={{width:'70px'}} placeholder="Assignee Name" name="assignee" type="text" onChange={handleChange} />
+                </label>
+
+                <label style={{marginLeft:'1%'}}>
+                    <span style={{marginRight:'10px'}}>Difficulty</span>
+                    <input style={{marginRight:'10px'}} name="difficulty" min={1} max={5} type="range" onChange={handleChange} defaultValue={3} />
+
                 </label>
 
                 <label>
-                    <span>Assigned To</span>
-                    <input onChange={handleChange} name="assignee" type="text" placeholder="Assignee Name" />
-                </label>
-
-                <label>
-                    <span>Difficulty</span>
-                    <input onChange={handleChange} defaultValue={3} type="range"  min={1} max={5} name="difficulty" />
-                </label>
-
-                <label>
-                    <Button type="submit">Add Item</Button>
+                    <Button style={{backgroundColor:'#2A363F'}} type="submit">Add Item</Button>
                 </label>
             </form>
         </div>
