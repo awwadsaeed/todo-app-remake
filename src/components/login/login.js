@@ -26,7 +26,7 @@ const Login = () => {
   return (
     <If condition={contextType.loggedIn}>
       <Then>
-        <button onClick={contextType.logout}>Logout</button>
+        <Button onClick={contextType.logout}>Logout</Button>
       </Then>
       <Else>
         <div style={{marginLeft:'5%'}}>

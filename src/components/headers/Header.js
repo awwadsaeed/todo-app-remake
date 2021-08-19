@@ -5,7 +5,7 @@ import Login from '../login/login';
 import SignUp from '../signup/signup';
 function Header() {
     return (
-        <Navbar>
+        <Navbar className="bp3-navbar bp3-dark">
             <Navbar.Group >
                 <Navbar.Heading>Todo</Navbar.Heading>
                 <Navbar.Divider />
