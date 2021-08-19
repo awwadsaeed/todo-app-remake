@@ -5,12 +5,7 @@ function SettingsForm() {
     const settings = useContext(settingContext)
     const [show,setShow] = useState(true);
     const [numOfitems,setNumOfitems] = useState(1);
-/*
-        itemPerPage,
-        showCompleted,
-        setItemPerPage,
-        setShowCompleted,
-*/
+
     function handleItemNumber(e){
         setNumOfitems(Number(e.target.value));
     }

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Form from '../form/Form';
-// import Header from '../headers/Header';
 import List from '../list/list';
 import { v4 as uuid } from 'uuid';
 import "@blueprintjs/core/lib/css/blueprint.css";
@@ -15,11 +14,6 @@ const ToDo = () => {
     let data = { id: uuid(), text: item.text, assignee: item.assignee, complete: false, difficulty: item.difficulty }
     setList([...list, data]);
   }
-
-  // function deleteItem(id) {
-  //   const items = list.filter( item => item.id !== id );
-  //   setList(items);
-  // }
 
   function toggleComplete(id) {
 
